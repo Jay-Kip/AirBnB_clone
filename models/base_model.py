@@ -5,6 +5,8 @@ Base model that defines all common attributes/methods for other classes
 
 from uuid  import uuid4
 from datetime import datetime
+#from models.engine import file_storage
+#from models import storage
 
 
 class BaseModel:
@@ -39,7 +41,9 @@ class BaseModel:
         return "[{} ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
+        from models import storage
         self.update_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         obj_dict = self.__dict__.copy()
