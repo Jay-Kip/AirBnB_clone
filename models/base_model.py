@@ -10,10 +10,30 @@ from datetime import datetime
 class BaseModel:
     '''Defining the base model'''
 
-    def __init__(self):
-        self.id = str(uuid4())
+    def __init__(self, *args, **kwargs):
+
+        if kwargs:
+           
+            for key, value in kwargs.items():
+                if key != "__class__":
+
+                    if key in ("created_at", "updated_at"):
+                        '''Convert datetime string to detetime object
+                        value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S/%f")
+                        '''
+                        setattr(self, key, datetime.fromisoformat(value))
+
+                    else:
+                        setattr(self, key, value)
+                    
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = self.created_at
+
+        '''self.id = str(uuid4())
         self.created_at = datetime.now()
-        self.updated_at = self.created_at
+        self.updated_at = self.created_at'''
 
     def __str__(self):
         return "[{} ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
