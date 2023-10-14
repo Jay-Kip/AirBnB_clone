@@ -3,10 +3,10 @@
 Base model that defines all common attributes/methods for other classes
 '''
 
-from uuid  import uuid4
+from uuid import uuid4
 from datetime import datetime
-#from models.engine import file_storage
-#from models import storage
+# from models.engine import file_storage
+# from models import storage
 
 
 class BaseModel:
@@ -15,19 +15,19 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
 
         if kwargs:
-           
+            storage.new(self)
+
             for key, value in kwargs.items():
                 if key != "__class__":
 
                     if key in ("created_at", "updated_at"):
                         '''Convert datetime string to detetime object
-                        value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S/%f")
                         '''
                         setattr(self, key, datetime.fromisoformat(value))
 
                     else:
                         setattr(self, key, value)
-                    
+
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
@@ -38,7 +38,11 @@ class BaseModel:
         self.updated_at = self.created_at'''
 
     def __str__(self):
-        return "[{} ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{} ({}) {}".format(
+                self.__class__.__name__,
+                self.id,
+                self.__dict__
+                )
 
     def save(self):
         from models import storage
