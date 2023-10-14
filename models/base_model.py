@@ -16,7 +16,7 @@ class BaseModel:
         '''Initializes a new instance'''
 
         if kwargs:
-            storage.new(self)
+            '''storage.new(self)'''
 
             for key, value in kwargs.items():
                 if key != "__class__":
