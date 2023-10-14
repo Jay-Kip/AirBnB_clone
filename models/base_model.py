@@ -21,7 +21,7 @@ class BaseModel:
                 if key != "__class__":
 
                     if key in ("created_at", "updated_at"):
-                        '''Convert datetime string to detetime object
+                        '''convert datetime string to detetime object
                         '''
                         setattr(self, key, datetime.fromisoformat(value))
 
