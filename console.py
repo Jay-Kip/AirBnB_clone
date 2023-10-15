@@ -128,17 +128,16 @@ class HBNBCommand(cmd.Cmd):
             '''
             print all string representation of instances
             '''
-            args = line.split()
-            if args and args[0] not in CLASSES:
-                print("** class doesn't exist **")
-                return
-            objects = []
-            if not args:
-                objects = models.storage.all().values()
+            arg_list = line.split()
+            objects = self.storage.all().values()
+            if not arg_list:
+                print([str(obj) for obj in objects])
             else:
-                objects = [obj for obj in models.storage.all().values()
-                           if type(obj).__name__ == args[0]]
-            print([str(obj) for obj in objects])
+                if arg_list[0] not in CLASSES:
+                    print("** class doesn't exist **")
+                else:
+                    print([str(obj) for obj in objects
+                           if arg_list[0] in str(obj)])
 
         def do_update(self, line):
             '''
