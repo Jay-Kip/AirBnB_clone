@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-Defies class review that inherits from super class BaseModel
+Defies class review that inherits from Super class BaseModel
 '''
 
 
