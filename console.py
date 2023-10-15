@@ -4,6 +4,8 @@ contains the entry point of the command interpreter
 """
 
 import cmd
+from shlex import split
+import re
 
 
 class HBNBCommand(cmd.Cmd):
