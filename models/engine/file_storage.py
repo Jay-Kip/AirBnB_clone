@@ -5,6 +5,7 @@ and deserializes JSON file to instances
 """
 
 import json
+from models.base_model import BaseModel
 
 
 class FileStorage:
@@ -19,15 +20,15 @@ class FileStorage:
         return self.__objects
 
     def new(self, obj):
+        '''
+        sets in __object with key <obj class name>.id
+        '''
         self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
-        '''obj_dict = {}
-        for key, obj in self.__objects.items():
-            obj.__dict[key] = obj.to_dict()
-
-        with open(self.__file_path, 'w') as file:
-            json.dump(obj_dict, file)'''
+        '''
+        serializes the __objects to the specified HSIN file
+        '''
         with open(self.__file_path, mode="w") as f:
             dict_storage = {}
             for key, value in self.__objects.items():
@@ -51,13 +52,3 @@ class FileStorage:
                     self.__object[key] = obj
         except FileNotFoundError:
             return
-        '''
-
-            with open(FileStorage.__file_path) as f:
-                objdict = json.load(f)
-                for o in objdict.values():
-                    cls_name = o["__class__"]
-                    del o["__class__"]
-                    self.new(eval(cls_name)(**o))
-        except FileNotFoundError:
-            return'''
