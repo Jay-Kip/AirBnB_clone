@@ -14,7 +14,7 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         '''Initializes a new instance'''
-
+        from models import storage
         if kwargs:
             '''storage.new(self)'''
 
@@ -38,7 +38,7 @@ class BaseModel:
         '''
         Returns string representation of an instance
         '''
-        return "[{} ({}) {}".format(
+        return "[{}] ({}) {}".format(
                 self.__class__.__name__,
                 self.id,
                 self.__dict__
