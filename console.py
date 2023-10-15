@@ -7,7 +7,6 @@ import cmd
 from shlex import split
 import re
 
-import models
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -19,7 +18,13 @@ from models import storage
 
 
 CLASSES = [
-        "BaseModel"
+        "BaseModel",
+        "User",
+        "State",
+        "City",
+        "Amenity",
+        "Place",
+        "Review",
         ]
 
 
