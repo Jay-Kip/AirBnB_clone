@@ -9,11 +9,9 @@ from models.base_model import BaseModel
 class Amenity(BaseModel):
    '''
     Defines the class Amenity
-   ''' 
+   '''
 
     name = ""
 
-'''
     def __init__(*args, **kwargs):
-        super().__init__(*args, **kwargs)
-'''     
+        super().__init__(*args, **kwargs)   

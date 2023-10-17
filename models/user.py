@@ -17,8 +17,6 @@ class User(BaseModel):
     first_name = ""
     last_name = ""
 
-'''
     def __init__(self, *args, **kwargs):
-        initialize user instance
+        '''initialize user instance'''
         super().__init__(*args, **kwargs)
-'''
