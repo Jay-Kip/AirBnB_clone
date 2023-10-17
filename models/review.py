@@ -16,8 +16,10 @@ class Review(BaseModel):
     user_id = ""
     text = ""
 
+'''
     def __init__(self, *args, **kwargs):
-        '''
+        
         initializes the class
-        '''
+        
         super().__init__(*args, **kwargs)
+'''
