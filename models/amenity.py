@@ -1,17 +1,8 @@
 #!/usr/bin/python3
-'''
-Defines class Amenity that inherits from Super class BaseModel
-'''
-
+"""Contains the Amenity model"""
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-   '''
-    Defines the class Amenity
-   '''
-
+    """Implements the Amenity model"""
     name = ""
-
-    def __init__(*args, **kwargs):
-        super().__init__(*args, **kwargs)   
