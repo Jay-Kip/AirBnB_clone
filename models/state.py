@@ -1,17 +1,8 @@
 #!/usr/bin/python3
-'''
-Class State that inherits from Super class BaseModel
-'''
-
+""" A module containing the State module"""
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    '''
-    creates an object stae that inherits from BaseModel
-    '''
-
+    """Implements the State model for any state object"""
     name = ""
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)

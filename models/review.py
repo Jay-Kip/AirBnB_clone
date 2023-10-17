@@ -1,23 +1,10 @@
 #!/usr/bin/python3
-'''
-Defies class review that inherits from Super class BaseModel
-'''
-
-
+"""Contains the Review model"""
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    '''
-    Defines class review
-    '''
-
+    """Implements the Review model"""
     place_id = ""
     user_id = ""
     text = ""
-
-    def __init__(self, *args, **kwargs):
-        '''
-        initializes the class
-        '''
-        super().__init__(*args, **kwargs)

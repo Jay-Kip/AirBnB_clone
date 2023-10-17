@@ -1,22 +1,20 @@
 #!/usr/bin/python3
-'''
-Class user that inherits from super class 'BaseModel'
-'''
-
-
+"""
+Implementation of user's model
+"""
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    '''
-    THis class inherits from BaseModel
-    '''
-
+    """
+    Implements a user model
+    Args:
+    email (str) : the email of the user
+    password (str) : the password of the user
+    first_name (str) : the first name of the user
+    last_name (str) : the last name of the user
+    """
     email = ""
     password = ""
     first_name = ""
     last_name = ""
-
-    def __init__(self, *args, **kwargs):
-        '''initialize user instance'''
-        super().__init__(*args, **kwargs)
