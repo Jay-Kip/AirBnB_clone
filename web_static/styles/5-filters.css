@@ -5,8 +5,7 @@
     border-radius: 4px;
     border: 1px solid #DDDDDD;
     display: flex;
-    flex-direction: row;
-    align-items: ;    
+    flex-direction: row;   
     
 }
 
@@ -20,17 +19,28 @@ button{
     border-radius: 4px;
     margin-right: 30px;   
     margin-top: 10px;
+    margin-left: auto;
 
 }
 button:hover{
     opacity: .9;
 }
 
-.locations, .amenities{
+.locations{
     box-sizing: border-box;
     height: 100%;
     width: 25%;
     border-right: 1px solid #DDDDDD;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+}
+.amenities{
+    box-sizing: border-box;
+    height: 100%;
+    width: 25%;
     margin-top: auto;
     display: flex;
     flex-direction: column;
@@ -40,8 +50,10 @@ button:hover{
 
 h3{
     font-weight: 600;
+    margin: 0%;
 }
 h4{
+    margin: 0%;
     font-weight: 400;
     font-size: 14px;
 }
