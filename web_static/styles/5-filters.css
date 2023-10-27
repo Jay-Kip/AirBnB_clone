@@ -35,7 +35,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 40px;
+    padding-left: 50px;
 }
 .amenities{
     box-sizing: border-box;
