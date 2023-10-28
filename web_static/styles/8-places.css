@@ -23,9 +23,6 @@
     border-radius: 4px;
     text-align: center;
     font-size: 30px;
-    display: ;
-    flex-direction: ;
-    justify-content:;
 }
 .places article .price_by_night{
     color: #FF5A5F;
@@ -52,9 +49,7 @@
     background-repeat: no-repeat;
     height: 50px;
     width: 100px;
-    margin-top: ;
-    display: ;
-
+    
 }
 
 .number_rooms{
@@ -79,8 +74,7 @@
 
 .max_guest p{
     font-size: medium;
-    text-align:start;
-    vertical-align: ;
+    text-align: start;
     margin: 0;
     margin-top: 15px;
 }
@@ -111,5 +105,4 @@
 }
 .description p{
     font-size: small;
-    margin: ;
 }
